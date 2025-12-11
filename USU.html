@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Retreat Assessment Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #667eea;
+            margin-right: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .rating-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .rating-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .rating-option input[type="radio"] {
+            margin-right: 6px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .note {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UTech Students' Union Council Pre-Retreat Assessment Form</h1>
+        <p class="subtitle">Your responses will help us create a more meaningful and productive retreat experience as mandated by Article X, Section 16 of the Students' Union Constitution</p>
+        
+        <div class="note">
+            <strong>Confidential:</strong> All responses are anonymous and will be used solely for planning purposes to better support the Council and student body. This assessment aligns with our mission: "To effectively serve and protect the rights of students promoting their academic, social, cultural, spiritual and physical development."
+        </div>
+        
+        <form id="assessmentForm">
+            <!-- Personal Information -->
+            <div class="section">
+                <h2>Council Member Information</h2>
+                <div class="form-group">
+                    <label for="name">Name (Optional):</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Optional):</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="councilPosition">Council Position (Optional):</label>
+                    <select id="councilPosition" name="councilPosition">
+                        <option value="">Select your position...</option>
+                        <optgroup label="Board of Executives">
+                            <option value="president">President</option>
+                            <option value="1st-vp">1st Vice President Academic Affairs, Clubs & Societies</option>
+                            <option value="vp-finance">Vice President, Finance</option>
+                            <option value="vp-student-services">Vice President, Student Services</option>
+                            <option value="vp-pr">Vice President, Public Relations</option>
+                            <option value="exec-secretary">Executive Secretary</option>
+                        </optgroup>
+                        <optgroup label="Board of Representatives">
+                            <option value="sci-sport-rep">Faculty of Science and Sport Representative</option>
+                            <option value="health-rep">College of Health Sciences Representative</option>
+                            <option value="edu-liberal-rep">Faculty of Education and Liberal Studies Representative</option>
+                            <option value="engineering-rep">School of Engineering Representative</option>
+                            <option value="scit-rep">School of Computing and IT Representative</option>
+                            <option value="soba-rep">School of Business Administration/JDSEEL Representative</option>
+                            <option value="blm-rep">School of Building and Land Management Representative</option>
+                            <option value="arch-rep">Caribbean School of Architecture Representative</option>
+                            <option value="law-rep">Faculty of Law Representative</option>
+                            <option value="western-rep">Western Campus Representative</option>
+                            <option value="resident-rep">Resident Students' Representative</option>
+                            <option value="grad-rep">Graduate Students' Representative</option>
+                            <option value="intl-rep">International Students' Representative</option>
+                            <option value="med-rep">Joint Colleges of Medicine, Oral Health, and Veterinary Sciences Representative</option>
+                        </optgroup>
+                        <optgroup label="Board of Directors">
+                            <option value="dir-elections">Director of Elections and Regulatory Affairs</option>
+                            <option value="dir-community">Director of Community Service</option>
+                            <option value="dir-health-safety">Director of Health and Safety</option>
+                            <option value="dir-entertainment">Director of Entertainment and Cultural Activities</option>
+                            <option value="dir-sport">Director of Sport</option>
+                            <option value="dir-spiritual">Director of Spiritual Development</option>
+                            <option value="dir-special">Director of Special Projects</option>
+                            <option value="editor">Editor in Chief</option>
+                        </optgroup>
+                        <optgroup label="Board of Advisors">
+                            <option value="advisor-pres">Advisor to the President</option>
+                            <option value="advisor-1vp">Advisor to the 1st Vice President</option>
+                            <option value="exec-assistant">Executive Assistant</option>
+                            <option value="advisor-vpss">Special Advisor to VP Student Services</option>
+                            <option value="pres-assistant">President's Assistant</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tenure">Time on Students' Union Council:</label>
+                    <select id="tenure" name="tenure" required>
+                        <option value="">Select...</option>
+                        <option value="first-year">First year on Council</option>
+                        <option value="second-year">Second year on Council</option>
+                        <option value="third-year">Third year or more on Council</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Job Satisfaction -->
+            <div class="section">
+                <h2>Council Experience & Effectiveness</h2>
+                <div class="form-group">
+                    <label>Overall satisfaction with your Council experience:</label>
+                    <div class="rating-group">
+                        <div class="rating-option">
+                            <input type="radio" id="sat1" name="satisfaction" value="1" required>
+                            <label for="sat1">Very Dissatisfied</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="sat2" name="satisfaction" value="2">
+                            <label for="sat2">Dissatisfied</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="sat3" name="satisfaction" value="3">
+                            <label for="sat3">Neutral</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="sat4" name="satisfaction" value="4">
+                            <label for="sat4">Satisfied</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="sat5" name="satisfaction" value="5">
+                            <label for="sat5">Very Satisfied</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="roleDislikes">What aspects of your Council role do you find most challenging or frustrating?</label>
+                    <textarea id="roleDislikes" name="roleDislikes" placeholder="Consider: portfolio responsibilities, time management, resource constraints, communication barriers, etc." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="executiveConcerns">Are there concerns about the Executive Board or Council leadership you'd like to address?</label>
+                    <textarea id="executiveConcerns" name="executiveConcerns" placeholder="This may include decision-making processes, transparency, communication, or guidance received"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="councilDynamics">Describe any challenges in Council dynamics or relationships with fellow Council members:</label>
+                    <textarea id="councilDynamics" name="councilDynamics" placeholder="Consider: Board interactions, collaboration between portfolios, conflicts, communication issues, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="studentBodyChallenges">What challenges do you face in representing or serving the student body?</label>
+                    <textarea id="studentBodyChallenges" name="studentBodyChallenges" placeholder="Consider: student engagement, feedback mechanisms, addressing student concerns, etc."></textarea>
+                </div>
+            </div>
+            
+            <!-- Personal Development -->
+            <div class="section">
+                <h2>Leadership Development & Portfolio Performance</h2>
+                <div class="form-group">
+                    <label for="achievements">What are your top 3 achievements in your Council role this year?</label>
+                    <textarea id="achievements" name="achievements" placeholder="Consider: programs implemented, initiatives led, student impact, collaboration successes, etc." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="weaknesses">What leadership or portfolio-specific areas do you feel you need to improve or develop?</label>
+                    <textarea id="weaknesses" name="weaknesses" placeholder="Be honest - this helps us plan targeted training and support" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="skills">What skills, training, or resources would help you serve more effectively in your portfolio?</label>
+                    <textarea id="skills" name="skills" placeholder="Examples: public speaking, conflict resolution, project management, budgeting, event planning, social media, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="constitutionKnowledge">How well do you understand the Students' Union Constitution and your role's responsibilities?</label>
+                    <select id="constitutionKnowledge" name="constitutionKnowledge">
+                        <option value="">Select...</option>
+                        <option value="very-limited">Very limited understanding</option>
+                        <option value="basic">Basic understanding</option>
+                        <option value="moderate">Moderate understanding</option>
+                        <option value="strong">Strong understanding</option>
+                        <option value="expert">Expert understanding</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Support and Resources -->
+            <div class="section">
+                <h2>Support, Resources & Council Operations</h2>
+                <div class="form-group">
+                    <label>Select areas where you feel you lack adequate support:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportExec" name="lackSupport" value="executive">
+                            <label for="supportExec">Executive Board guidance and mentorship</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportPeers" name="lackSupport" value="peers">
+                            <label for="supportPeers">Fellow Council members collaboration</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportUniversity" name="lackSupport" value="university">
+                            <label for="supportUniversity">University Administration support</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportFinancial" name="lackSupport" value="financial">
+                            <label for="supportFinancial">Financial resources for portfolio activities</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportOffice" name="lackSupport" value="office">
+                            <label for="supportOffice">Students' Union Office resources and facilities</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportTraining" name="lackSupport" value="training">
+                            <label for="supportTraining">Training and professional development</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportTime" name="lackSupport" value="time">
+                            <label for="supportTime">Time management and workload balance</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="supportCommunication" name="lackSupport" value="communication">
+                            <label for="supportCommunication">Communication channels and information flow</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="supportDetails">Please elaborate on any areas where you lack support and suggest improvements:</label>
+                    <textarea id="supportDetails" name="supportDetails" placeholder="Be specific about what would help you succeed in your role"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="codeOfConductConcerns">Have you experienced challenges related to the Council's Code of Conduct or accountability?</label>
+                    <textarea id="codeOfConductConcerns" name="codeOfConductConcerns" placeholder="This includes attendance expectations, report submissions, Council event participation, etc."></textarea>
+                </div>
+            </div>
+            
+            <!-- Financial Concerns -->
+            <div class="section">
+                <h2>Financial & Academic Well-being</h2>
+                <div class="form-group">
+                    <label>Are you facing financial challenges?</label>
+                    <div class="rating-group">
+                        <div class="rating-option">
+                            <input type="radio" id="financialYes" name="financialChallenges" value="yes" required>
+                            <label for="financialYes">Yes</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="financialNo" name="financialChallenges" value="no">
+                            <label for="financialNo">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="financialDetailsSection" style="display: none;">
+                    <label>These financial challenges affect: (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="financialPersonal" name="financialImpact" value="personal">
+                            <label for="financialPersonal">My personal life and well-being</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="financialCouncil" name="financialImpact" value="council">
+                            <label for="financialCouncil">My ability to fulfill my Council role</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="financialAcademic" name="financialImpact" value="academic">
+                            <label for="financialAcademic">My ability to maintain my academics</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="financialStrugglesSection" style="display: none;">
+                    <label for="financialStruggles">Please elaborate on your financial challenges (Optional but helpful):</label>
+                    <textarea id="financialStruggles" name="financialStruggles" placeholder="Examples: transportation costs to Council events, inability to afford meals during long Council days, need for additional work that conflicts with Council duties, tuition challenges, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Are you experiencing academic difficulties?</label>
+                    <div class="rating-group">
+                        <div class="rating-option">
+                            <input type="radio" id="academicYes" name="academicChallenges" value="yes" required>
+                            <label for="academicYes">Yes</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="academicNo" name="academicChallenges" value="no">
+                            <label for="academicNo">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="academicDetailsSection" style="display: none;">
+                    <label>These academic difficulties affect: (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="academicPersonal" name="academicImpact" value="personal">
+                            <label for="academicPersonal">My personal stress and well-being</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="academicCouncil" name="academicImpact" value="council">
+                            <label for="academicCouncil">My ability to fulfill my Council role</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="academicGrades" name="academicImpact" value="grades">
+                            <label for="academicGrades">My GPA and academic standing</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="academicStrugglesSection" style="display: none;">
+                    <label for="academicStruggles">Please elaborate on your academic challenges (Optional but helpful):</label>
+                    <textarea id="academicStruggles" name="academicStruggles" placeholder="Examples: difficulty balancing coursework with Council duties, risk of academic probation, challenging courses this semester, missing classes for Council events, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Would any of these benefit you?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="needTimeManagement" name="supportNeeds" value="time-management">
+                            <label for="needTimeManagement">Time management and study skills workshop</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="needFinancialLiteracy" name="supportNeeds" value="financial">
+                            <label for="needFinancialLiteracy">Financial literacy and budgeting resources</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="needMentorship" name="supportNeeds" value="mentorship">
+                            <label for="needMentorship">Academic or leadership mentorship</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="needCounseling" name="supportNeeds" value="counseling">
+                            <label for="needCounseling">Access to counseling or wellness services</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="needFlexibility" name="supportNeeds" value="flexibility">
+                            <label for="needFlexibility">More flexible Council meeting schedules</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Retreat Expectations -->
+            <div class="section">
+                <h2>Retreat Expectations & Suggestions</h2>
+                <div class="form-group">
+                    <label for="retreatGoals">What do you hope to gain from this mandatory Council retreat?</label>
+                    <textarea id="retreatGoals" name="retreatGoals" placeholder="Reference: Constitution Article X, Section 16 - this retreat is designed for planning, leadership training, and team building" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="trainingTopics">What specific training topics would benefit you and the Council?</label>
+                    <textarea id="trainingTopics" name="trainingTopics" placeholder="Examples: parliamentary procedure, financial management, event planning, conflict resolution, public speaking, social media strategy, understanding the Constitution, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Which areas should the retreat prioritize? (Select up to 3)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="team-building">
+                            <label>Team building and Council unity</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="strategic-planning">
+                            <label>Strategic planning for the year</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="skills-training">
+                            <label>Skills training and workshops</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="conflict-resolution">
+                            <label>Addressing conflicts and improving communication</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="constitution-review">
+                            <label>Constitution review and governance</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="student-engagement">
+                            <label>Improving student engagement strategies</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" name="retreatPriorities" value="wellness">
+                            <label>Council member wellness and self-care</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="previousRetreats">If you attended previous retreats, what worked well and what needs improvement?</label>
+                    <textarea id="previousRetreats" name="previousRetreats" placeholder="Your feedback helps us make this retreat the best yet"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="additionalComments">Any additional comments, concerns, or suggestions?</label>
+                    <textarea id="additionalComments" name="additionalComments" placeholder="This is your opportunity to share anything else on your mind"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit">Submit Assessment</button>
+        </form>
+    </div>
+    
+    <script>
+        const form = document.getElementById('assessmentForm');
+        let allResponses = [];
+        
+        // Load existing responses from storage
+        const loadResponses = () => {
+            const stored = localStorage.getItem('retreatResponses');
+            if (stored) {
+                allResponses = JSON.parse(stored);
+            }
+        };
+        
+        // Save responses to storage
+        const saveResponses = () => {
+            localStorage.setItem('retreatResponses', JSON.stringify(allResponses));
+        };
+        
+        // Download all responses as JSON
+        const downloadResponses = () => {
+            if (allResponses.length === 0) {
+                alert('No responses to download yet.');
+                return;
+            }
+            
+            const dataStr = JSON.stringify(allResponses, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `retreat-responses-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        };
+        
+        // Admin password - CHANGE THIS to your desired password
+        const ADMIN_PASSWORD = "UTechAdmin2024";
+        let isAdminLoggedIn = false;
+        
+        // Check if admin is already logged in (stored in session)
+        const checkAdminStatus = () => {
+            const adminSession = sessionStorage.getItem('adminLoggedIn');
+            if (adminSession === 'true') {
+                isAdminLoggedIn = true;
+                showAdminControls();
+            } else {
+                showAdminLoginButton();
+            }
+        };
+        
+        // Show admin login button
+        const showAdminLoginButton = () => {
+            const loginDiv = document.createElement('div');
+            loginDiv.id = 'adminLoginBtn';
+            loginDiv.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 1000;';
+            loginDiv.innerHTML = `
+                <button onclick="showAdminLogin()" style="background: #667eea; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-weight: 600;">
+                    🔐 Admin Access
+                </button>
+            `;
+            document.body.appendChild(loginDiv);
+        };
+        
+        // Show admin login modal
+        window.showAdminLogin = () => {
+            const modal = document.createElement('div');
+            modal.id = 'adminModal';
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+            modal.innerHTML = `
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); max-width: 400px; width: 90%;">
+                    <h2 style="margin: 0 0 20px 0; color: #667eea; font-size: 24px;">Admin Login</h2>
+                    <p style="color: #666; margin-bottom: 20px; font-size: 14px;">Enter the admin password to access response data</p>
+                    <input type="password" id="adminPasswordInput" placeholder="Enter password" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; margin-bottom: 15px; box-sizing: border-box;">
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="verifyAdminPassword()" style="flex: 1; background: #667eea; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px;">
+                            Login
+                        </button>
+                        <button onclick="closeAdminModal()" style="flex: 1; background: #6b7280; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px;">
+                            Cancel
+                        </button>
+                    </div>
+                    <div id="loginError" style="color: #ef4444; margin-top: 10px; font-size: 13px; display: none;">Incorrect password. Please try again.</div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            document.getElementById('adminPasswordInput').focus();
+            
+            // Allow Enter key to submit
+            document.getElementById('adminPasswordInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    verifyAdminPassword();
+                }
+            });
+        };
+        
+        // Close admin modal
+        window.closeAdminModal = () => {
+            const modal = document.getElementById('adminModal');
+            if (modal) {
+                modal.remove();
+            }
+        };
+        
+        // Verify password
+        window.verifyAdminPassword = () => {
+            const input = document.getElementById('adminPasswordInput');
+            const errorDiv = document.getElementById('loginError');
+            
+            if (input.value === ADMIN_PASSWORD) {
+                isAdminLoggedIn = true;
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                closeAdminModal();
+                document.getElementById('adminLoginBtn').remove();
+                showAdminControls();
+            } else {
+                errorDiv.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        };
+        
+        // Show admin controls panel
+        const showAdminControls = () => {
+            const adminDiv = document.createElement('div');
+            adminDiv.id = 'adminControls';
+            adminDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;';
+            adminDiv.innerHTML = `
+                <div style="margin-bottom: 10px; font-weight: bold; color: #667eea; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Admin Controls</span>
+                    <button onclick="logoutAdmin()" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 12px; padding: 4px 8px;">Logout</button>
+                </div>
+                <button onclick="downloadAllResponses()" style="background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin-bottom: 8px; width: 100%; font-size: 14px;">
+                    📥 Download All Responses
+                </button>
+                <button onclick="viewResponsesSummary()" style="background: #10b981; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin-bottom: 8px; width: 100%; font-size: 14px;">
+                    📊 View Summary
+                </button>
+                <button onclick="clearAllResponses()" style="background: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 14px;">
+                    🗑️ Clear All Data
+                </button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">
+                    Total: <span id="responseCount">0</span> responses
+                </div>
+            `;
+            document.body.appendChild(adminDiv);
+            updateResponseCount();
+        };
+        
+        // Logout admin
+        window.logoutAdmin = () => {
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem('adminLoggedIn');
+            const controls = document.getElementById('adminControls');
+            if (controls) {
+                controls.remove();
+            }
+            showAdminLoginButton();
+            alert('Logged out successfully.');
+        };
+        
+        // View quick summary
+        window.viewResponsesSummary = () => {
+            if (allResponses.length === 0) {
+                alert('No responses yet.');
+                return;
+            }
+            
+            const summary = `
+📊 QUICK SUMMARY
+
+Total Responses: ${allResponses.length}
+
+Satisfaction Ratings:
+${countSatisfaction()}
+
+Financial Challenges: ${countYesNo('financialChallenges')}
+Academic Challenges: ${countYesNo('academicChallenges')}
+
+Last Response: ${new Date(allResponses[allResponses.length - 1].submittedAt).toLocaleString()}
+
+Download the JSON file for full analysis in the dashboard.
+            `;
+            alert(summary);
+        };
+        
+        const countSatisfaction = () => {
+            const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+            allResponses.forEach(r => {
+                if (r.satisfaction) counts[r.satisfaction]++;
+            });
+            return `  1⭐: ${counts[1]} | 2⭐: ${counts[2]} | 3⭐: ${counts[3]} | 4⭐: ${counts[4]} | 5⭐: ${counts[5]}`;
+        };
+        
+        const countYesNo = (field) => {
+            const yes = allResponses.filter(r => r[field] === 'yes').length;
+            const no = allResponses.filter(r => r[field] === 'no').length;
+            return `Yes: ${yes} | No: ${no}`;
+        };
+        
+        // Update response count display
+        const updateResponseCount = () => {
+            const countEl = document.getElementById('responseCount');
+            if (countEl) {
+                countEl.textContent = allResponses.length;
+            }
+        };
+        
+        // Global functions for admin controls
+        window.downloadAllResponses = downloadResponses;
+        window.clearAllResponses = () => {
+            if (confirm('Are you sure you want to delete all responses? This cannot be undone.')) {
+                allResponses = [];
+                saveResponses();
+                updateResponseCount();
+                alert('All responses cleared.');
+            }
+        };
+        
+        // Show/hide financial details based on yes/no selection
+        const financialRadios = document.querySelectorAll('input[name="financialChallenges"]');
+        const financialDetailsSection = document.getElementById('financialDetailsSection');
+        const financialStrugglesSection = document.getElementById('financialStrugglesSection');
+        
+        financialRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    financialDetailsSection.style.display = 'block';
+                    financialStrugglesSection.style.display = 'block';
+                } else {
+                    financialDetailsSection.style.display = 'none';
+                    financialStrugglesSection.style.display = 'none';
+                }
+            });
+        });
+        
+        // Show/hide academic details based on yes/no selection
+        const academicRadios = document.querySelectorAll('input[name="academicChallenges"]');
+        const academicDetailsSection = document.getElementById('academicDetailsSection');
+        const academicStrugglesSection = document.getElementById('academicStrugglesSection');
+        
+        academicRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    academicDetailsSection.style.display = 'block';
+                    academicStrugglesSection.style.display = 'block';
+                } else {
+                    academicDetailsSection.style.display = 'none';
+                    academicStrugglesSection.style.display = 'none';
+                }
+            });
+        });
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = {
+                submittedAt: new Date().toISOString()
+            };
+            
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // Store this response
+            allResponses.push(data);
+            saveResponses();
+            updateResponseCount();
+            
+            console.log('Form Data:', data);
+            
+            alert('Thank you for completing the assessment! Your responses have been recorded.\n\nAdministrators can download all responses using the admin controls in the top-right corner.');
+            
+            form.reset();
+            // Reset visibility of conditional sections
+            financialDetailsSection.style.display = 'none';
+            financialStrugglesSection.style.display = 'none';
+            academicDetailsSection.style.display = 'none';
+            academicStrugglesSection.style.display = 'none';
+        });
+        
+        // Initialize
+        loadResponses();
+        checkAdminStatus();
+    </script>
+</body>
+</html>
