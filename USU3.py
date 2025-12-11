@@ -765,9 +765,46 @@ elif page == "🔐 Admin":
         
         st.divider()
         
-        # Download Data
+       # Download Data
         st.subheader("📥 Download Data")
         if st.session_state.responses:
             json_data = json.dumps(st.session_state.responses, indent=2)
             st.download_button(
-                label
+                label="Download as JSON",
+                data=json_data,
+                file_name=f"retreat-responses-{datetime.now().strftime('%Y%m%d')}.json",
+                mime="application/json"
+            )
+            
+            # Also offer CSV download
+            df = pd.DataFrame(st.session_state.responses)
+            csv = df.to_csv(index=False)
+            st.download_button(
+                label="Download as CSV",
+                data=csv,
+                file_name=f"retreat-responses-{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv"
+            )
+        else:
+            st.info("No responses to download yet.")
+        
+        st.divider()
+        
+        # View Responses
+        st.subheader("📋 View Responses")
+        if st.session_state.responses:
+            df = pd.DataFrame(st.session_state.responses)
+            st.dataframe(df, use_container_width=True)
+        else:
+            st.info("No responses yet.")
+        
+        st.divider()
+        
+        # Clear Data
+        st.subheader("🗑️ Clear All Data")
+        st.warning("⚠️ This action cannot be undone!")
+        if st.button("Clear All Responses", type="primary"):
+            if st.checkbox("I understand this will delete all data"):
+                st.session_state.responses = []
+                st.success("All responses cleared!")
+                st.rerun()
